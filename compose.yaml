@@ -1,0 +1,23 @@
+services:
+  compaction-server:
+    build:
+      context: .
+      dockerfile: apps/compaction-server/Dockerfile
+    ports:
+      - "7790:7790"
+    environment:
+      AWS_PROFILE: "${AWS_PROFILE:-default}"
+      AWS_REGION: "${AWS_REGION:-us-east-1}"
+      AWS_SDK_LOAD_CONFIG: "1"
+      COMPACTION_HOST: "0.0.0.0"
+      COMPACTION_MODEL_ID: "${COMPACTION_MODEL_ID:-deepseek.v3.2}"
+      COMPACTION_MAX_OUTPUT_TOKENS: "${COMPACTION_MAX_OUTPUT_TOKENS:-8000}"
+      COMPACTION_INPUT_USD_PER_MILLION: "${COMPACTION_INPUT_USD_PER_MILLION:-}"
+      COMPACTION_OUTPUT_USD_PER_MILLION: "${COMPACTION_OUTPUT_USD_PER_MILLION:-}"
+    volumes:
+      - "${HOME}/.aws:/home/bun/.aws:ro"
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:7790/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 3

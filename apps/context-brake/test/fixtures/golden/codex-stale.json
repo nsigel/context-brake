@@ -1,0 +1,4 @@
+{
+  "decision": "block",
+  "reason": "Context Brake: this thread's prompt cache is likely stale. The last model usage was 6 hours ago. Continuing would send approximately 153,002 input-context tokens. An estimated 8,000-token handoff would avoid approximately 145,002 tokens on the next request, saving about $0.91 before compaction cost. Resubmit the prompt to continue this thread.\n\nTo continue in a new chat, run: context-brake relay codex-golden"
+}

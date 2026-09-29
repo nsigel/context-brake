@@ -1,0 +1,9 @@
+.git
+.github
+node_modules
+dist
+data
+apps/*/test
+*.log
+**/.credentials.json
+**/credentials.json

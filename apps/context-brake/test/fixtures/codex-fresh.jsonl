@@ -1,0 +1,2 @@
+{"type":"session_meta","timestamp":"2026-08-10T17:50:00.000Z","payload":{}}
+{"type":"event_msg","timestamp":"2026-08-10T17:55:00.000Z","payload":{"type":"token_count","info":{"model_context_window":258400,"last_token_usage":{"input_tokens":150000,"cached_input_tokens":140000,"cache_write_input_tokens":0,"output_tokens":3000}}}}

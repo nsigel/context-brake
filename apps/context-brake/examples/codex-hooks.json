@@ -1,0 +1,38 @@
+{
+  "description": "Context Brake prompt and lifecycle checks",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/context-brake/apps/context-brake/hooks/codex-user-prompt-submit.sh",
+            "timeout": 1
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/context-brake/apps/context-brake/hooks/codex-user-prompt-submit.sh",
+            "timeout": 1
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/absolute/path/to/context-brake/apps/context-brake/hooks/codex-user-prompt-submit.sh",
+            "timeout": 1
+          }
+        ]
+      }
+    ]
+  }
+}

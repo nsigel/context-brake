@@ -1,0 +1,22 @@
+{
+  "model": "deepseek.v3.2",
+  "messages": [
+    {
+      "role": "system",
+      "content": "compact carefully"
+    },
+    {
+      "role": "user",
+      "content": "conversation data"
+    }
+  ],
+  "max_tokens": 8000,
+  "thinking": {
+    "type": "enabled"
+  },
+  "reasoning_effort": "high",
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  }
+}
